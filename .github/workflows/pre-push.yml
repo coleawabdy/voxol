@@ -1,0 +1,26 @@
+name: pre-push
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust Toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Build
+        run: cargo build
+      
+      - name: Test
+        run: cargo test
+      
+      - name: Lint
+        run: cargo clippy --all-targets --all-features -- -D warnings
+      
+      - name: Format
+        run: cargo fmt --all --check
