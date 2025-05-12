@@ -1,8 +1,0 @@
-[package]
-name = "voxol"
-edition.workspace = true
-rust-version.workspace = true
-authors.workspace = true
-repository.workspace = true
-
-[dependencies]
