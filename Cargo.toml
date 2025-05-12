@@ -1,9 +1,6 @@
-[workspace]
-members = ["crates/*"]
-resolver = "2"
-
-[workspace.package]
+[package]
+name = "voxol"
+version = "0.1.0"
 edition = "2024"
-rust-version = "1.86.0"
-authors = ["Cole Awabdy <contact@coleawabdy.com>"]
-repository = "https://github.com/coleawabdy/voxol"
+
+[dependencies]
